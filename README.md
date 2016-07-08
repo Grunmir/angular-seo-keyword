@@ -4,9 +4,10 @@ Service SEO for angular, is responsible for updating the main html tags if you p
 
 - supports [Open Graph protocol](http://ogp.me/) meta elements
 - supports [schema.org protocol](http://schema.org/) meta elements
+- update your url dynamically
 - update your document title dynamically
-- update your meta tags depending on the state your application is in
-- no additional scripting required, works out-of-the-box!
+- update your meta tags dynamically
+- It has an attribute for the h1 tag that dynamically updates (seo-h1)
 
 
 ## Usage
@@ -107,4 +108,27 @@ SEO full object
       image: null
     }
   };
+```
+
+If we want to dynamically update our labels __<h1>__ and use the attribute __seo-h1__
+
+```html
+  <h1 seo-h1></h1>
+```
+
+You can use the following methods to specifically update some labels individually
+
+```javascript
+app.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) {
+
+	seoService.setSeo(seoObject);
+	seoService.setTitle(titleString);
+	seoService.setH1(h1String);
+	seoService.seoUrl(urlString);
+	seoService.setMeta(metaObjet);
+	seoService.setTwitter(twitterObjet);
+	seoService.setOpenGraph(openGraphObjet);
+	seoService.setGooglePlus(googleObjet);
+	
+}]);
 ```
