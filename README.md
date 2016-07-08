@@ -46,7 +46,7 @@ yourApp.config(['seoOptionProvider', function(seoOptionProvider) {
 Using SEO service
 
 ```javascript
-app.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) { 
+yourApp.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) { 
   
 	var seo = {
     	url: "hello-world",
@@ -119,7 +119,7 @@ If we want to dynamically update our labels __h1__ and use the attribute __seo-h
 You can use the following methods to specifically update some labels individually
 
 ```javascript
-app.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) {
+yourApp.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) {
 
 	seoService.setSeo(seoObject);
 	seoService.setTitle(titleString);
@@ -130,5 +130,19 @@ app.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) {
 	seoService.setOpenGraph(openGraphObjet);
 	seoService.setGooglePlus(googleObjet);
 	
+}]);
+```
+
+To use dynamically url must add a __:seo__ element angular routes
+
+```javascript
+yourApp.config(['$routeProvider', function($routeProvider) {
+
+	$routeProvider
+		.when('index/:seo?', {
+			templateUrl: 'index',
+			controller: 'indexCtrl'
+		});
+
 }]);
 ```
