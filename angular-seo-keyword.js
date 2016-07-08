@@ -1,6 +1,6 @@
 /**!
  * AngularJS SEO keyword service
- * @author Eduardo Aranda <eduardo@adaixgroup.com>
+ * @author Eduardo Aranda <earanda1980@gmail.com>
  */
 
 (function () {
