@@ -28,16 +28,16 @@ Inject the seoOptionProvider in the config and define your meta tags
 
 ```javascript
 yourApp.config(['seoOptionProvider', function(seoOptionProvider) {
-  
+	
 	...
   	...
 
   	seoOptionProvider.setOptions({
-    		title: {
-      			default: 'Domain web',   /* default: document.title */
-      			prefix: 'Domain', /* default: "" */
-      			postfix: ' | Domain' /* default:  */
-    		}
+    	title: {
+    		default: 'Domain web',   /* default: document.title */
+    		prefix: 'Domain', /* default: "" */
+    		postfix: ' | Domain' /* default:  */
+    	}
 	});
 	
 }]);
