@@ -110,7 +110,7 @@ SEO full object
   };
 ```
 
-If we want to dynamically update our labels __<h1>__ and use the attribute __seo-h1__
+If we want to dynamically update our labels __h1__ and use the attribute __seo-h1__
 
 ```html
   <h1 seo-h1></h1>
