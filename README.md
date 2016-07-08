@@ -24,7 +24,7 @@ Then add the `angular-seo-keyword` module to the dependencies of your AngularJS 
 angular.module('yourApp', ['angular-seo-keyword']);
 ```
 
-Inject the seoOptionProvider in the config and define your meta tags
+Inject the `seoOptionProvider` in the config and define your meta tags
 
 ```javascript
 yourApp.config(['seoOptionProvider', function(seoOptionProvider) {
@@ -43,7 +43,7 @@ yourApp.config(['seoOptionProvider', function(seoOptionProvider) {
 }]);
 ```
 
-Using SEO service
+Using service `seoService`
 
 ```javascript
 yourApp.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) { 
@@ -62,6 +62,32 @@ yourApp.controller('myCtrl', ['$scope', 'seoService', function($scope, seoServic
 
 }]);
 ```
+
+## H1
+
+If we want to dynamically update our labels __h1__ and use the attribute __seo-h1__
+
+```html
+  <h1 seo-h1></h1>
+```
+
+### ROUTE
+
+To use dynamically url must add a __:seo__ element angular routes
+
+```javascript
+yourApp.config(['$routeProvider', function($routeProvider) {
+
+	$routeProvider
+		.when('index/:seo?', {
+			templateUrl: 'index',
+			controller: 'indexCtrl'
+		});
+
+}]);
+```
+
+## Advanced features
 
 SEO full object
 
@@ -110,12 +136,6 @@ var seo = {
 };
 ```
 
-If we want to dynamically update our labels __h1__ and use the attribute __seo-h1__
-
-```html
-  <h1 seo-h1></h1>
-```
-
 You can use the following methods to specifically update some labels individually
 
 ```javascript
@@ -130,19 +150,5 @@ yourApp.controller('myCtrl', ['$scope', 'seoService', function($scope, seoServic
 	seoService.setOpenGraph(openGraphObjet);
 	seoService.setGooglePlus(googleObjet);
 	
-}]);
-```
-
-To use dynamically url must add a __:seo__ element angular routes
-
-```javascript
-yourApp.config(['$routeProvider', function($routeProvider) {
-
-	$routeProvider
-		.when('index/:seo?', {
-			templateUrl: 'index',
-			controller: 'indexCtrl'
-		});
-
 }]);
 ```
