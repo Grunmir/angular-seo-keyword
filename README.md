@@ -48,17 +48,17 @@ Using SEO service
 ```javascript
 app.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) { 
   
-  var seo = {
-    url: "hello-world",
-    title: "Hello World",
-    h1: "Hello world, this cloudy day?",
-    meta: {
-      description: "The world is crazy, but GitHub comfortable life.",
-      keywords: "hello word cloud crazy",
-    }
-  };
-  
-  seoService.setSeo(seo);
+	var seo = {
+    	url: "hello-world",
+    	title: "Hello World",
+    	h1: "Hello world, this cloudy day?",
+    	meta: {
+    		description: "The world is crazy, but GitHub comfortable life.",
+    		keywords: "hello word cloud crazy",
+    	}
+  	};
+  	
+  	seoService.setSeo(seo);
 
 }]);
 ```
@@ -66,48 +66,48 @@ app.controller('myCtrl', ['$scope', 'seoService', function($scope, seoService) {
 SEO full object
 
 ```javascript
-  var seo = {
+var seo = {
     url: "hello-world",
     title: "Hello World",
     h1: "Hello world, this cloudy day?",
     meta: {
-      description: "The world is crazy, but GitHub comfortable life.",
-      keywords: "hello word cloud crazy",
-      ...
-      ...
+    	description: "The world is crazy, but GitHub comfortable life.",
+    	keywords: "hello word cloud crazy",
+    	...
+    	...
     },
     open_graph: {
-      og: {
-        title: null,
-        type: null,
-        url: null,
-        image: null,
-        description: null,
-        site_name: null
-      },
-      article: {
-        published_time: null,
-        modified_time: null,
-        section: null,
-        tag: null
-      },
-      fb: {
-        admins: null
-      }
+    	og: {
+	        title: null,
+	        type: null,
+	        url: null,
+	        image: null,
+	        description: null,
+	        site_name: null
+    	},
+    	article: {
+	        published_time: null,
+	        modified_time: null,
+	        section: null,
+	        tag: null
+    	},
+    	fb: {
+    	  	admins: null
+    	}
     },
     twitter: {
-      card: null,
-      site: null,
-      title: null,
-      description: null,
-      creator: null
+		card: null,
+		site: null,
+		title: null,
+		description: null,
+		creator: null
     },
     google_plues: {
-      name: null,
-      description: null,
-      image: null
+		name: null,
+		description: null,
+		image: null
     }
-  };
+};
 ```
 
 If we want to dynamically update our labels __h1__ and use the attribute __seo-h1__
